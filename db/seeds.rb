@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+10.times do
+  Resto.create({name:Faker::Company.name, description:Faker::Lorem.sentence, picture_url:"http://www.firstluxe.com/wp-content/uploads/2012/10/maldives-2.jpeg" })
+end

@@ -1,0 +1,13 @@
+<h1>Bienvenue à notre sélection de restos!!</h1>
+
+<%= link_to 'Nouveau restaurant', new_resto_path %>
+
+<table>
+  <% @restos.each do |resto|  %>
+    <tr>
+        <td> <%= link_to resto.name, resto_path(resto), class: "my-link" %> </td>
+        <td> <%= resto.description %> </td>
+        <td> <%= image_tag resto.picture_url, size: '200x100' %> </td>
+    </tr>
+  <% end %>
+</table>

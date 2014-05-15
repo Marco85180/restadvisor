@@ -1,0 +1,13 @@
+<h1>Voici le restaurant selectionné</h1>
+
+<div>
+<%= image_tag @resto.picture_url, size: '200x100' %>
+</div>
+
+<p>
+<%= @resto.description %>
+</p>
+
+<%= link_to "DESTROY", resto_path(@resto), method: "delete", confirm: "T'es sûr bobby?" %>
+
+<%= link_to 'Back', restos_path %>
