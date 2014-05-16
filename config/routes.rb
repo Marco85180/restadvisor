@@ -1,14 +1,19 @@
 Restadvisor::Application.routes.draw do
 
-root to: "restos#index"
+  get "comments/create"
+  get "comments/destroy"
+resources :restos
+resources :comments, only: [:create, :destroy]
 
-  get "restos" => "restos#index"
-  get "restos/new" => "restos#new", as: "new_resto"
-  get "restos/:id" => "restos#show", as: "resto"
+# root to: "restos#index"
 
-  post "restos" => "restos#create"
+#   get "restos" => "restos#index"
+#   get "restos/new" => "restos#new", as: "new_resto"
+#   get "restos/:id" => "restos#show", as: "resto"
 
-  delete "restos/:id" => "restos#destroy"
+#   post "restos" => "restos#create"
+
+#   delete "restos/:id" => "restos#destroy"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

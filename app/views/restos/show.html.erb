@@ -11,3 +11,21 @@
 <%= link_to "DESTROY", resto_path(@resto), method: "delete", confirm: "T'es sûr bobby?" %>
 
 <%= link_to 'Back', restos_path %>
+
+
+<p>comments
+  <ul>
+    <%@resto.comments.each do |comment| %>
+    <li> <%= comment.body %> </li>
+    <%= link_to 'supprimer', comment_path(comment), method: 'delete' %>
+    <% end %>
+  </ul>
+</p>
+
+
+<%= form_for(@resto.comments.build) do |f| %>
+  <%= f.hidden_field :resto_id %>
+  <%= f.label :body, "ajouter votre commentaire" %>
+  <%= f.text_area :body %>
+  <%= f.submit "commenter" %>
+<% end %>
